@@ -27,4 +27,10 @@ class Product extends Model
         'meta_keywords',
         'meta_description',
     ];
+
+    public function category()
+    {
+        # code...
+        return $this->belongsTo(Category::class, 'cate_id', 'id'); //foreignkey=strs id of othr mdl
+    }
 }

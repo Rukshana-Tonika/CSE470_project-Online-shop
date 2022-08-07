@@ -12,7 +12,7 @@ class ProductController extends Controller
     //
     public function index()
     {
-        $products = Product::all();
+        $products = Product::all();  //calling model of all prods
         return view('admin.product.index', compact('products'));
     }
 
@@ -52,5 +52,11 @@ class ProductController extends Controller
         $products->save();
         return redirect('products')->with('status',"Product Added Successfully!");
     
+    }
+
+    public function edit($id)
+    {
+        $products = Product::find($id);
+        return view('admin.product.edit');  //edit file banai Views e
     }
 }

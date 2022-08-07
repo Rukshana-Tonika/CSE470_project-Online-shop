@@ -46,6 +46,7 @@ class CategoryController extends Controller
 
         return redirect('/dashboard')->with('status',"Category Added Successfully");
     }
+    
     public function edit($id)
     {
         $category = Category::find($id);

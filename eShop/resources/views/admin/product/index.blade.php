@@ -14,7 +14,7 @@
                         <th>Category</th>
                         <th>Name</th>
                         <!-- <th>Description</th> -->
-                        <th>Original Price</th>
+                        <th>Original Price(Tk)</th>
                         <!-- <th>Selling Price</th> -->
                         <th>Image</th>
                         <th>Action</th>
@@ -28,7 +28,7 @@
                         <td>{{ $item->category->name }}</td>  
                         <!-- frm category table calling 'name' -->
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->original_price }}</td>
                         <td>
                             <img src="{{ asset('assets/uploads/products/'.$item->image) }}" class="cate-image" alt="Image here">
                         </td>
@@ -37,7 +37,7 @@
                             <!-- <a href="#" class="btn btn-primary">Edit</a> -->
                             <a href="{{ url('edit-product/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <!-- Delete the "Category" -->
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{ url('delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     @endforeach

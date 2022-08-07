@@ -84,8 +84,9 @@
                     </div>
 
                     @if($products->image)
-                    <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="">
+                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="Product image">
                     @endif
+
                     <div class="col-md-12">
                         <input type="file" name="image" class="form-control">
                     </div>

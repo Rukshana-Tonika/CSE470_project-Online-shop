@@ -66,7 +66,6 @@
 
                 </div>
             </form>    
-        <!-- <h1>Categroy Page</h1> -->
         </div>
     </div>
 @endsection

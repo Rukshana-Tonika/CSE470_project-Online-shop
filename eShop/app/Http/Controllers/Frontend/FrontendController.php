@@ -22,4 +22,18 @@ class FrontendController extends Controller
         $category = Category::where('status','0')->get();  //getting the category where status is 0
         return view('frontend.category', compact('category'));
     }
+
+    public function viewcategory($slug)
+    {
+        if(Category::where('slug', $slug)->exists())
+        {
+            $category = Category::where('slug', $slug)->first();
+            $products = Product::where('cate_id', $category->id)->where('status','0')->get();  //if admin makes status=0, cate will be hidden
+            return view('frontend.products.index', compact('category','products'));  //passing cate n prod with "compact"
+        }
+        else
+        {
+            return redirect('/')->with('status', "Slug doesn't exists");
+        }
+    }
 }

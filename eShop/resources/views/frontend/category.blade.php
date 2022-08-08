@@ -12,16 +12,18 @@
                         <h2>All Categories</h2>
                         <div class="row">
                             @foreach ($category as $cate)
-                                <div class="col-md-3 mb-2">
-                                    <div class="card">
-                                        <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" alt="Category image">
-                                        <div class="card-body">
-                                            <h5>{{ $cate->name }}</h5>
-                                            <p>
-                                                {{ $cate->description }}
-                                            </p>
+                                <div class="col-md-3 mb-3">
+                                    <a href="{{ url('view-category/'.$cate->slug) }}">
+                                        <div class="card">
+                                            <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" alt="Category image">
+                                            <div class="card-body">
+                                                <h5>{{ $cate->name }}</h5>
+                                                <p>
+                                                    {{ $cate->description }}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @endforeach
                         </div>

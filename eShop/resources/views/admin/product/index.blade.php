@@ -25,7 +25,7 @@
                     @foreach($products as $item)  
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->category->name }}</td>  
+                        <td>{{ $item->category->name ?? 'name not found'}}</td>  
                         <!-- frm category table calling 'name' -->
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->original_price }}</td>

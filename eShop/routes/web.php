@@ -2,12 +2,13 @@
 
 //use Admin\CategoryController;
 
-use Admin\FrontendController;
+// use Admin\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,11 @@ use App\Http\Controllers\Admin\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes();
 
@@ -31,8 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/dashboard','Admin\FrontendController@index');
-        //return view('admin.index');
-        // return "this is Admin";
+        
     Route::get('categories','Admin\CategoryController@index');
     Route::get('add-category','Admin\CategoryController@add');
     Route::post('insert-category','Admin\CategoryController@insert');

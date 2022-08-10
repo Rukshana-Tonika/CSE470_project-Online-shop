@@ -34,6 +34,8 @@ class FrontendController extends Controller
         else
         {
             return redirect('/')->with('status', "Slug doesn't exists");
+            // return redirect('/')->with('status', "Slug doesn't exists");
+
         }
     }
 }

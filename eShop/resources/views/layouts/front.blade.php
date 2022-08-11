@@ -30,6 +30,14 @@
     
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- poreuncmnt kori uprer line -->
+    
+    <!-- font awesome theke collected -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- font awsm again -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+
 </head>
 <body>
     

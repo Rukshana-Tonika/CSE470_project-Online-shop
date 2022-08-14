@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,14 @@ Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'prod
 Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::middleware(['auth'])->group(function(){
+//     // Route::post('add-to-cart', [CartController::class, 'addProduct']);
+// });
+Route::post('add-to-cart', [CartController::class, 'addProduct']);
+
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {

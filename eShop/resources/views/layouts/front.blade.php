@@ -25,10 +25,7 @@
 
     <!-- ///// -->
     <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <!-- Bootstrap CSS -->
-    
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- poreuncmnt kori uprer line -->
     
     <!-- font awesome theke collected -->
@@ -47,7 +44,9 @@
     </div>
 
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" ></script>
+    <script src="{{ asset('frontend/js/custom.js') }}" ></script>
 
+    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if(session('status'))
         <script>

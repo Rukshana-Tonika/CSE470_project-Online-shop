@@ -12,13 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url('category') }}">Category</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li> -->
-        <!-- Cart add kori beside Cate -->
+
         <li class="nav-item">
           <a class="nav-link" href="{{ url('cart') }}">My Cart</a>
         </li> 
+
 
         @guest
           @if (Route::has('login'))

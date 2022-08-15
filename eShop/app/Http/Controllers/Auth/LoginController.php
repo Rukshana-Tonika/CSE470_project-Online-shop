@@ -48,5 +48,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        // $this->middleware('guest');
+        // return redirect('/')->with('status','hey guest');
     }
 }

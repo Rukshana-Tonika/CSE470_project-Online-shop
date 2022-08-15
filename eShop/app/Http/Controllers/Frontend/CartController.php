@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -47,6 +48,27 @@ class CartController extends Controller
     public function viewcart()
     {
         $cartitems = Cart::where('user_id', Auth::id())->get(); //Cart model eta
-        return view('frontend.cart', compact('cartitems'));
+        return view('frontend.cart', compact('cartitems'));  //passing the 'cartitems' var in the 'view'
+    }
+
+    public function deleteproduct(Request $request)
+    {
+        if(Auth::check())
+        {
+            $prod_id = $request->input('prod_id');
+            if(Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists())
+            {
+                $cartItem = Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
+                $cartItem->delete();
+                // return $request->product_id;
+                return response()->json(['status' => "Deleted Successfully"]);
+
+
+            }
+        }
+        else
+        {
+            return response()->json(['status' => "Login to continue"]);
+        }
     }
 }
